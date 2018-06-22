@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Global System Planning Resource</title>
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1,minimal-ui" name="viewport">
+	<link rel="shortcut icon" href="/web/favicon.ico" type="image/x-icon">
+	<script src="https://unpkg.com/vue"></script>
+	<script src="https://unpkg.com/vue-material"></script>
+	<link rel="stylesheet" href="assets/css/vue-material.css">
+	<link rel="stylesheet" href="theme/default.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<script defer src="index.js"></script>
+	<style lang="scss" scoped>
+	   ul>li {
+	    list-style-type: none; /* Убираем маркеры */
+	    margin-left: 8px; /* Отступ слева в браузере IE и Opera */
+	    padding-left: 8px; /* Отступ слева в браузере Firefox, Safari, Chrome */
+	   }
+	   </style>
+	<style lang="scss" scoped>
+	   ul>li>a {
+		   text-decoration:none;
+		   }
+	   </style>
+</head>
+
+<body>
+<div id="app">
+    <md-app md-mode="fixed">
+      <md-app-toolbar class="md-large md-dense md-primary">
+        <md-button class="md-icon-button" @click="toggleMenu" v-if="!menuVisible">
+          <md-icon>menu</md-icon>
+        </md-button>
+	      <span class="md-title">GSRP5</span>
+	      <div class="md-layout md-gutter">
+	        <div class="md-layout-item">Home</div>
+	        <div class="md-layout-item">Products</div>
+	        <div class="md-layout-item">Get Started</div>
+	        <div class="md-layout-item">FAQ</div>
+	        <div class="md-layout-item">Blog</div>
+	        <div class="md-layout-item">Docs</div>
+        </div>
+      </md-app-toolbar>
+
+      <md-app-drawer :md-active.sync="menuVisible" md-persistent="full"  :md-fixed="mdFixed">
+        <md-toolbar class="md-transparent" md-elevation="0">
+          <span>Navigation</span>
+
+          <div class="md-toolbar-section-end">
+            <md-button class="md-icon-button md-dense" @click="toggleMenu">
+              <md-icon>keyboard_arrow_left</md-icon>
+            </md-button>
+          </div>
+        </md-toolbar>
+      <md-list>
+        <md-list-item>
+          <md-icon>home</md-icon>
+          <span class="md-list-item-text">Home</span>
+        </md-list-item>
+
+        <md-list-item>
+          <md-icon>send</md-icon>
+          <span class="md-list-item-text">Products</span>
+        </md-list-item>
+
+        <md-list-item>
+          <md-icon>delete</md-icon>
+          <span class="md-list-item-text">Get Started</span>
+        </md-list-item>
+
+        <md-list-item>
+          <md-icon>error</md-icon>
+          <span class="md-list-item-text">FAQ</span>
+        </md-list-item>
+
+        <md-list-item>
+          <md-icon>error</md-icon>
+          <span class="md-list-item-text">Blog</span>
+        </md-list-item>
+
+        <md-list-item>
+          <md-icon>error</md-icon>
+          <span class="md-list-item-text">Docs</span>
+        </md-list-item>
+
+      </md-list>
+      </md-app-drawer>
+      <md-app-content></md-app-content>
+    </md-app>
+</div>
+</body>
+</html>
+
+
